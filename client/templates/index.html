@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <!-- Corrected the CSS link with Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+<body>
+    <!-- <h1>Upload an Image</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form> -->
+    <div class="container">
+        <h1>Age Detection Using UTKFace</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="image-upload">Upload an Image:</label>
+            <input type="file" id="imageInput" name="file" accept="image/*" required>
+            <input type="submit" value="upload" id="predictButton">
+        </form>
+
+        <div id="result">
+            <h2>Predicted Age:</h2>
+            <p id="age-output">No prediction yet.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
